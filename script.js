@@ -41,20 +41,21 @@ function calculateInstallment(data) {
 
 function showResult(result) {
   document.getElementById("result").classList.remove("hidden");
-  document.gentElementById("resContract)").innerText = result.contractNo;
+  document.getElementById("resContract").innerText = result.contractNo;
   document.getElementById("resClientName").innerText = result.clientName;
   document.getElementById("resDP").innerText = result.dp.toLocaleString();
   document.getElementById("resLoan").innerText = result.loan.toLocaleString();
+  document.getElementById("resMonthly").innerText = result.monthlyInstallment.toLocaleString();
 
   const table = document.getElementById("scheduleTable");
 
   result.schedules.forEach((schedule) => {
-    tableBody.innerHTML += `
+    table.innerHTML += `
         <tr>
-            <td>${result.installmentNo}</td>
-            <td>${schedule.dueDate}</td>
-            <td>Rp. ${schedule.amount.toLocaleString()}</td>
-            <td>${schedule.dueDate}</td>
+        <td>${result.contractNo}</td>
+        <td>${schedule.installmentNo}</td>
+        <td>Rp ${schedule.amount.toLocaleString()}</td>
+        <td>${schedule.dueDate}</td>
         </tr>
         `;
   });
