@@ -22,8 +22,21 @@ function calculateInstallment(data) {
   const dp = data.carPrice * data.downPayment;
   const loan = data.carPrice - dp;
   const totalMonths = data.tenor * 12;
-  const monthlyInstallment = Math.round(loan / totalMonths);
+  let monthlyRate = 0;
 
+  if (totalMonths <= 12) {
+    monthlyRate = 0.12;
+  } else if (totalMonths <= 24) {
+    monthlyRate = 0.10;
+  } else {
+    monthlyRate = 0.08;
+  }
+
+  const totalMonthlyRate = loan * monthlyRate;
+  const totalLoan = loan + totalMonthlyRate;
+  const monthlyInstallment = Math.round(totalLoan / totalMonths);
+  
+  // generate jadwal angsuran
   let dueDate = new Date(data.startDate);
   const schedules = [];
 
