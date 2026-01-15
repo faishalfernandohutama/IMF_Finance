@@ -2,6 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Angsuran bayar IMS Finance</title>
   </head>
   <body>
@@ -33,6 +34,8 @@
           <label for="">Tanggal Mulai Cicilan</label>
           <input type="text" id="startDate" />
         </div>
+
+        <button type="submit">Hitung Ansuran</button>
       </form>
 
       <div id="result" class="hidden">
@@ -42,7 +45,23 @@
         <p><strong>DP : </strong>  <span id="downPayment"></span></p>
         <p><strong>Pinjaman : </strong>  <span id="resLoan"></span></p>
         <p><strong>Angsuran : </strong>  <span id="resMonthly"></span></p>
+
+        <h3>Jadwal Angsuran</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Kontrak</th>
+              <th>Angsuran Ke</th>
+              <th>Angsuran / Bulan</th>
+              <th>Jatuh Tempo</th>
+            </tr>
+          </thead>
+          <tbody id="scheduleTable"></tbody>
+        </table>
       </div>
     </div>
   </body>
 </html>
+
+
+<script src="script.js"></script>
