@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angsuran bayar IMS Finance</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Angsuran Mobil</h2>
+
+      <form action="creditForm">
+        <div class="form-group">
+          <label for="">Nomor Kontrak</label>
+          <input type="text" id="contractNo" />
+        </div>
+        <div class="form-group">
+          <label for="">Nama Client</label>
+          <input type="text" id="clientName" />
+        </div>
+        <div class="form-group">
+          <label for="">Harga Mobil (OTR)</label>
+          <input type="text" id="carPrice" />
+        </div>
+        <div class="form-group">
+          <label for="">Down Payment (%)</label>
+          <input type="text" id="downPayment" />
+        </div>
+        <div class="form-group">
+          <label for="">Tenor (Tahun)</label>
+          <input type="text" id="tenor" />
+        </div>
+        <div class="form-group">
+          <label for="">Tanggal Mulai Cicilan</label>
+          <input type="text" id="startDate" />
+        </div>
+      </form>
+
+      <div id="result" class="hidden">
+        <h3>Detail Kontrak</h3>
+        <p><strong>Kontrak : </strong>  <span id="contractNo"></span></p>
+        <p><strong>Client : </strong>  <span id="clientName"></span></p>
+        <p><strong>DP : </strong>  <span id="downPayment"></span></p>
+        <p><strong>Pinjaman : </strong>  <span id="resLoan"></span></p>
+        <p><strong>Angsuran : </strong>  <span id="resMonthly"></span></p>
+      </div>
+    </div>
+  </body>
+</html>
